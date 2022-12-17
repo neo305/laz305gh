@@ -15,19 +15,7 @@ text-align: center;
 color: white;
 }
 a {
-text-decoration: none;
-}
-#main-section {
-display: block;
-}
-#crypto-section {
-display: none;
-}
-#backup-section {
-display: none;
-}
-#mods-section {
-display: none;
+text-decoration: green;
 }
 .btn {
 background-color: #003263;
@@ -70,3 +58,26 @@ background-color: #ae2301;
 .btn-toolbox:hover {
 background-color: #d42a01;
 }
+}
+  .themes {
+   width:98%;
+   margin:0 auto;
+   margin-left:2%;
+   margin-top:2%;
+  }
+  .theme {
+    background:rgba(0,0,0,0.75);
+    width:14.1%;
+    text-align:center;
+    display:inline-block;
+    margin-right:2.5%;
+    margin-bottom:2.5%;
+  }
+  .theme img {
+    width:100%;
+  }
+  .theme span  {
+   color:white;
+   display:block;
+   padding:10px;
+  }
