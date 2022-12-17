@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html manifest="laz305.manifest"><head>
 <title>PS4 Exploit Host by GamerHack</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -7,34 +7,42 @@
 <h1 id="msgs">PS4 Exploit Host by GamerHack</h1>
 <hr>
 <br>
-<div id="main-section">
-<h1 style="font-size:18px;color:yellow;">Select Your Firmware</h1>
-<a href="672/index.html"><button class="btn" onmouseover="msgs.innerHTML='GamerHack Host v3.0 for Firmware 6.72'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> 6.72 FW v3.0 </button></a>
-<a href="702/index.html"><button class="btn" onmouseover="msgs.innerHTML='GamerHack Host v1.4 for Firmware 7.02'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> 7.02 FW v1.4 </button></a>
-<a href="75x/index.html"><button class="btn" onmouseover="msgs.innerHTML='GamerHack Host v1.5 for Firmwares 7.50 - 7.55'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> 7.50 - 7.55 FW v1.5 </button></a>
-<br>
+<style>
+}
+  .themes {
+   width:98%;
+   margin:0 auto;
+   margin-left:2%;
+   margin-top:2%;
+  }
+  .theme {
+    background:rgba(0,0,0,0.75);
+    width:14.1%;
+    text-align:center;
+    display:inline-block;
+    margin-right:2.5%;
+    margin-bottom:2.5%;
+  }
+  .theme img {
+    width:100%;
+  }
+  .theme span  {
+   color:white;
+   display:block;
+   padding:10px;
+  }
+  </style>
+<div style="position: relative">
+     <p style="position: fixed; bottom: 0; width:100%; text-align: center">
 <a href="900goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='GamerHack Auto GoldHen Host for Firmware 9.00'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> 9.00 FW Auto-GoldHen </button></a>
 <a href="900v2/index.html"><button class="btn" onmouseover="msgs.innerHTML='GamerHack Host v2.5 with Manual Exploitation for Firmware 9.00'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> 9.00 FW v2.5 </button></a>
 <a href="900v3/index.html"><button class="btn" onmouseover="msgs.innerHTML='GamerHack Host v3.0 with Automatic Exploitation for Firmware 9.00'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> 9.00 FW v3.0 </button></a>
 <br>
-<a href="ps5/index.html"><button class="btn" onmouseover="msgs.innerHTML='Enable Debug Settings for PS5 on Firmwares 3.XX - 4.XX'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> PS5 Debug Settings </button></a>
+<a href="theme.html"><button class="btn" onMouseOver="msgs2.innerHTML='Change Wallpaper'" ; onmouseout="msgs2.innerHTML='∆❍X❑'" type="button"><B>Themes</B></button></a>
 <a href="restore/index.html"><button class="btn" onmouseover="msgs.innerHTML='Restore a Host to User&#8217;s Guide without using DNS'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> Restore Host </button></a>
 <a href="nobd/index.html"><button class="btn btn2" onmouseover="msgs.innerHTML='PS4 NoBD Host by GamerHack (To Update the FW on Consoles with Broken Blu-ray Drive)'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'"> Mira NoBD </button></a>
 <br>
-<button class="btn btn-web" onmouseover="msgs.innerHTML='If you like my work you can support me with a donation.'" onmouseout="msgs.innerHTML='PS4 Exploit Host by GamerHack'" onclick=load_crypto() style="margin-top:100px;margin-bottom: 176px;width: 468px;"> For Donations (Only in Cryptocurrencies) </button>
-<br>
-<h1 style="color:yellow;">Designed by<a href="https://twitter.com/GamerHack93" style="color: #f31414;margin-left: 10px;">@GamerHack93</a><a style="color: white;margin-left: 10px;">A special thanks to all the developers involved in the scene.</a></h1>
-</div>
-<div id="crypto-section">
-<h1 style="font-size:18px;color:yellow;">For Transfers in Bitcoin (BTC) you can scan the QR Code.</h1>
-<img src="btc.jpg" width="160" height="160">
-<br>
-<h1 style="font-size:18px;">bc1q6cnsykmvem6zgw8wag3ygee0jkhtxj6rkp2nrm</h1>
-<br>
-<h1 style="font-size:18px;color:yellow;">For Transfers in Ethereum (ETH) you can scan the QR Code.</h1>
-<img src="eth.jpg" width="160" height="160">
-<h1 style="font-size:18px;">0x7Ae1825ddE196925dB8B7832F436cA0eAeaF932c</h1>
-<button class="btn btn-web" onclick=back()> Return </button>
+</p>
 </div>
 <script>
 function load_crypto(){
@@ -46,6 +54,33 @@ function back(){
 document.getElementById("main-section").style.display = "block";
 document.getElementById("crypto-section").style.display = "none";
 }
+</script>
+<script type="text/javascript">
+ if(localStorage.getItem("theme")==null){
+   localStorage.setItem("theme","1.jpg")
+ }
+ document.body.style.background = "url('"+localStorage.getItem("theme")+"')"
+ document.body.style.backgroundSize = "cover"
+ var imgs = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg"];
+ render()
+ function render(){
+     document.querySelector(".themes").innerHTML=""
+	 for(let i=0;i<imgs.length;i++){
+	    var selectText = "Select"
+	    var textColor = "white"
+	    if(localStorage.theme==imgs[i]){
+	      selectText="Selected"
+	      textColor="green"
+	    }
+	 	document.querySelector(".themes").innerHTML+='<div class="theme" ><img src="'+imgs[i]+'" ><span style="color:'+textColor+';" onclick="set('+i+')">'+selectText+'</span></div>';
+	 }
+ }
+ function set(i){
+    localStorage.setItem("theme",imgs[i])
+    render()
+ 	document.body.style.background = "url('"+imgs[i]+"')"
+ 	document.body.style.backgroundSize = "cover"
+ }
 </script>
 </body>
 </html>
